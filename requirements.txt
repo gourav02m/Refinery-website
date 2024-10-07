@@ -87,6 +87,7 @@ diff-match-patch @ file:///Users/ktietz/demo/mc3/conda-bld/diff-match-patch_1630
 dill @ file:///croot/dill_1692271232022/work
 distributed @ file:///croot/distributed_1701398021707/work
 distro @ file:///croot/distro_1701455004953/work
+dj-database-url==2.2.0
 Django==5.0.7
 docstring-to-markdown @ file:///work/ci_py311/docstring-to-markdown_1676851973684/work
 docutils @ file:///work/ci_py311/docutils_1676822773036/work

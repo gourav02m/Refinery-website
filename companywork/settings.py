@@ -9,6 +9,8 @@ https://docs.djangoproject.com/en/5.0/topics/settings/
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/5.0/ref/settings/
 """
+import dj_database_url
+
 import os
 from pathlib import Path
 
@@ -85,14 +87,15 @@ WSGI_APPLICATION = "companywork.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    "default": {
-        "ENGINE": "django.db.backends.mysql",
-        "NAME": "work",
-        "USER": "gaurav",
-        "PASSWORD": "hr16n9067",
-        "HOST": "127.0.0.1",
-        "PORT": '3306',
-    }
+    'default': dj_database_url.config(conn_max_age=600)
+    # "default": {
+    #     "ENGINE": "django.db.backends.mysql",
+    #     "NAME": "work",
+    #     "USER": "gaurav",
+    #     "PASSWORD": "hr16n9067",
+    #     "HOST": "127.0.0.1",
+    #     "PORT": '3306',
+    # }
 }
 
 
