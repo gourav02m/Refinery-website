@@ -30,7 +30,7 @@ SECRET_KEY = "django-insecure-)$jr-mo=$yta7b*ebn@5g0bl14*k8dovxfoez3#eu3#krw&s^^
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [*]
+ALLOWED_HOSTS = []
 
 
 # Application definition
@@ -87,15 +87,15 @@ WSGI_APPLICATION = "companywork.wsgi.application"
 # https://docs.djangoproject.com/en/5.0/ref/settings/#databases
 
 DATABASES = {
-    'default': dj_database_url.config(conn_max_age=600)
-    # "default": {
-    #     "ENGINE": "django.db.backends.mysql",
-    #     "NAME": "work",
-    #     "USER": "gaurav",
-    #     "PASSWORD": "hr16n9067",
-    #     "HOST": "127.0.0.1",
-    #     "PORT": '3306',
-    # }
+   
+    "default": {
+        "ENGINE": "django.db.backends.mysql",
+        "NAME": "work",
+        "USER": "gaurav",
+        "PASSWORD": "hr16n9067",
+        "HOST": "127.0.0.1",
+        "PORT": '3306',
+    }
 }
 
 

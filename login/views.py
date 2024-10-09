@@ -5,23 +5,28 @@ from .models import UserRegisterForm
 
 # Create your views here.
 def login(request):
-    if request.method== 'POST':
+    if request.method == 'POST':
         email = request.POST['email']
         password = request.POST['password']
-        
-        user = auth.authenticate(email=email,password=password)
-        print(f"email:- {email}")
+
+        # Retrieve the user by email
+        try:
+            user = User.objects.get(email=email)
+        except User.DoesNotExist:
+            messages.error(request, 'User with this email does not exist.')
+            return redirect('login')
+
+        # Authenticate using the username (Django uses username by default)
+        user = auth.authenticate(username=user.username, password=password)
+
         if user is not None:
             auth.login(request, user)
             return redirect('index')
         else:
-            messages.info(request, 'Invild USer')
-            print('Invild USer')
+            messages.error(request, 'Invalid password')
             return redirect('login')
 
-    else:
-
-        return render(request,'login.html')
+    return render(request, 'login.html')
 
 
 
